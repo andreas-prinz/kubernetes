@@ -1,0 +1,17 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+spec:
+  rules:
+  - host: ing.andr.haus.local
+    http:
+      paths:
+      - backend:
+          service:
+            name: my-service
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
